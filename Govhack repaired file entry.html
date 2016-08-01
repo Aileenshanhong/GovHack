@@ -1,0 +1,610 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE  PUBLIC "" ""><HTML><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+              
+<META charset="UTF-8">             
+<META http-equiv="X-UA-Compatible" content="IE=edge">             
+<META name="viewport" content="width=device-width, initial-scale=1">             <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
+    <TITLE>Govhack repaired file entry</TITLE>     
+<SCRIPT src="http://www.x3dom.org/download/x3dom.js" type="text/javascript"></SCRIPT>
+     <LINK href="HTML%20Events%20on%203D%20objects_files/x3dom.css" rel="stylesheet" 
+type="text/css">          
+<SCRIPT src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></SCRIPT>
+             
+<SCRIPT>
+        //Round a float value to x.xx format
+        function roundWithTwoDecimals(value)
+        {
+            return (Math.round(value * 100)) / 100;
+        }
+    
+        //Handle click on any group member
+        function handleGroupClick(event)
+        {
+            //Mark hitting point
+            $('#marker').attr('translation', event.hitPnt);
+            console.log(event);
+            
+            //Display coordinates of hitting point (rounded)
+            var coordinates = event.hitPnt;
+            $('#coordX').html(roundWithTwoDecimals(coordinates[0]));
+            $('#coordY').html(roundWithTwoDecimals(coordinates[1]));
+            $('#coordZ').html(roundWithTwoDecimals(coordinates[2]));
+               
+                
+
+        }
+        
+        //Handle click on a shape
+        function handleSingleClick(shape)
+        {
+                //Last clicked object descriptors
+                $('#id_description_line1').html($(shape).attr("def"));
+                $('#id_description_line2').html($(shape).attr("def1"));
+                $('#id_description_line3').html($(shape).attr("def2"));
+				$('#id_description_line4').html($(shape).attr("def3"));
+                $('#id_description_line5').html($(shape).attr("def4"));
+                $('#id_description_line6').html($(shape).attr("def5"));
+				$('#id_description_line7').html($(shape).attr("def6"));
+                $('#id_description_line8').html($(shape).attr("def7"));
+                $('#id_description_line9').html($(shape).attr("def8"));
+				$('#id_description_line10').html($(shape).attr("def9"));
+                $('#id_description_line11').html($(shape).attr("def10"));
+                $('#id_description_line12').html($(shape).attr("def11"));
+				$('#id_description_line13').html($(shape).attr("def12"));
+                $('#id_description_line14').html($(shape).attr("def13"));
+                $('#id_description_line15').html($(shape).attr("def14"));
+				$('#id_description_line16').html($(shape).attr("def15"));
+				$('#id_description_line17').html($(shape).attr("def16"));
+                $('#id_description_line18').html($(shape).attr("def17"));
+                $('#id_description_line19').html($(shape).attr("def18"));
+				$('#id_description_line20').html($(shape).attr("def19"));
+                $('#id_description_line21').html($(shape).attr("def20"));
+          
+				
+				
+
+                //Second table (KPIs)
+                $("#id_table2_kpi1").html($(shape).attr("kpi1"));
+                $("#id_table2_kpi2").html($(shape).attr("kpi2"));
+                $("#id_table2_kpi3").html($(shape).attr("kpi3"));
+                $("#id_table2_kpi4").html($(shape).attr("kpi4"));
+        }
+        
+        $(document).ready(function(){
+            //Add a onclick callback to every shape
+            $("shape").each(function() {
+                $(this).attr("onclick", "handleSingleClick(this)");
+            });
+        });
+        </SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10586.494"></HEAD> 
+<BODY>
+<H1>Weather System SoSE - Simulated Data</H1>
+<P>Click on any coloured text to bring up the meta data on the right hand side tables. 
+<P> This is a 3D environment. Left Mouse Drag spins chart. Righ Mouse Drag Zooms chart. Double Left Mouse Click create new spin point..
+<P>Red is Temperature, Blue is Wind, Green is Cloud, Brown is Sun. 
+
+</P><x3d id="boxes" height="800" width="800px" y="0px" x="0px" showlog="false" 
+showstat="false"><scene><viewpoint orientation="0 0 0 0" 
+position="0 0 40"></viewpoint>         <group 
+onclick="handleGroupClick(event)">
+
+
+
+<transform id="obj1" translation=" 8, 1,1" 
+rotation="0,0,0,0" scale=" .5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="01/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 2, 4,4" 
+rotation="0,0,0,0" scale=".5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="01/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 3,4,3" 
+rotation="0,0,0,0" scale=".5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="01/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 2, 2,6" 
+rotation="0,0,0,0" scale=" .5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="01/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="brown"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+
+
+
+<transform id="obj1" translation=" 2, 3,2" 
+rotation="0,0,0,0" scale=" .5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="02/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 4, 4,4" 
+rotation="0,0,0,0" scale=".5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="02/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 5,4,3" 
+rotation="0,0,0,0" scale=".5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="02/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 2, 4,6" 
+rotation="0,0,0,0" scale=" .5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="02/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="brown"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+
+
+<transform id="obj1" translation=" 5, 5,5" 
+rotation="0,0,0,0" scale=" .5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="03/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 1, 1,9" 
+rotation="0,0,0,0" scale=".5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="03/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 1,3,1" 
+rotation="0,0,0,0" scale=".5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="03/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+<transform id="obj1" translation=" 1, 1,1" 
+rotation="0,0,0,0" scale=" .5 .5 .5" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def="03/Jan/2016"
+def1="17.9"
+def2="25.6"
+def3="0"
+def4="11"
+def5="12.3"
+def6="E"
+def7="35"
+def8="0.654166666666667"
+def9="22.9"
+def10="57"
+def11="6"
+def12="SSW"
+def13="2"
+def14="1016.4"
+def15="24.2"
+def16="52"
+def17="4"
+def18="E"
+def19="28"
+def20="1013.7"
+><appearance><material 
+diffusecolor="brown"></material>        </appearance>         <text id="obj1" 
+string="01/Jan/2016" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+
+
+
+
+
+   <Transform id="obj_2" render="true" center="0,0,0" translation="0 3.6 0" rotation="0.0001 -0.0001 1 4.7124" scale="1 1 1" scaleOrientation="0,0,0,0">
+      <Shape id="obj_2_shp" render="true">
+        <Appearance id="obj_2_app" alphaclipthreshold="0.1">
+          <Material id="obj_2_mat" shininess=".05" transparency="0" ambientIntensity=".01" specularColor=".22 .1 .1" emissiveColor="0 0 0" diffuseColor=".09 .03 0"/>
+        </Appearance>
+        <Text id="obj_2_label" solid="false" ccw="true" lit="true"  string="10 Measurement 0">
+          <FontStyle id="obj_2_fs" style="PLAIN" size="1" family='"Times New Roman" "Times" "serif"' justify='"MIDDLE" "MIDDLE"' horizontal="true" leftToRight="true" topToBottom="true" spacing="1" quality="2"/>
+        </Text>
+      </Shape>
+    </Transform>
+    <Transform id="obj_1" render="true" center="0,0,0" translation="0 0.1 3.3" rotation="0 1 0 1.5708" scale="1 1 1" scaleOrientation="0,0,0,0">
+      <Shape id="obj_1_shp" render="true">
+        <Appearance id="obj_1_app" alphaclipthreshold="0.1">
+          <Material id="obj_1_mat" shininess=".05" transparency="0" ambientIntensity=".01" specularColor=".22 .1 .1" emissiveColor="0 0 0" diffuseColor=".09 .03 0"/>
+        </Appearance>
+        <Text id="obj_1_label" solid="false" ccw="true" lit="true"  string="10 Precipitation 0">
+          <FontStyle id="obj_1_fs" style="PLAIN" size="1" family='"Times New Roman" "Times" "serif"' justify='"MIDDLE" "MIDDLE"' horizontal="true" leftToRight="true" topToBottom="true" spacing="1" quality="2"/>
+        </Text>
+      </Shape>
+    </Transform>
+    <Transform id="obj_0" render="true" center="0,0,0" translation="3.2 0 0" rotation="0 0 1 0" scale="1 1 1" scaleOrientation="0,0,0,0">
+      <Shape id="obj_0_shp" render="true">
+        <Appearance id="obj_0_app" alphaclipthreshold="0.1">
+          <Material id="obj_0_mat" shininess=".05" transparency="0" ambientIntensity=".01" specularColor=".22 .1 .1" emissiveColor="0 0 0" diffuseColor=".09 .03 0"/>
+        </Appearance>
+        <Text id="obj_0_label" solid="false" ccw="true" lit="true"  string="0 Recurrence 10">
+          <FontStyle id="obj_0_fs" style="PLAIN" size="1" family='"Times New Roman" "Times" "serif"' justify='"MIDDLE" "MIDDLE"' horizontal="true" leftToRight="true" topToBottom="true" spacing="1" quality="2"/>
+        </Text>
+      </Shape>
+    </Transform>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+        </group> </scene> 
+<DIV style="left: 820px; top: 10px; width: 200px; position: absolute;">
+
+<H3>Click coordinates:</H3>
+<TABLE style="font-size: 1em;">
+  <TBODY>
+  <TR>
+    <TD>Participation: </TD>
+    <TD id="coordX">-</TD></TR>
+  <TR>
+    <TD>Recurrence: </TD>
+    <TD id="coordY">-</TD></TR>
+  <TR>
+    <TD>Measurement: </TD>
+    <TD id="coordZ">-</TD></TR></TBODY></TABLE><BR>
+<H3>KPIs</H3>
+<TABLE style="font-size: 1em;">
+  <TBODY>
+  <TR>
+    <TD>Temp: </TD>
+    <TD id="id_table2_kpi1">-</TD></TR>
+  <TR>
+    <TD>Wind: </TD>
+    <TD id="id_table2_kpi2">-</TD></TR>
+  <TR>
+    <TD>Cloud: </TD>
+    <TD id="id_table2_kpi3">-</TD></TR>
+  <TR>
+    <TD>Sun: </TD>
+    <TD 
+id="id_table2_kpi4">-</TD></TR></TBODY></TABLE></LABEL></LABEL>
+
+
+
+
+
+
+
+<H3>Last clicked object:</H3><LABEL for="id_description_line1">Date:</LABEL>
+<<DIV id="id_description_line1">-</DIV><LABEL for="id_description_line2">Temps Min °C
+<DIV id="id_description_line2">-</DIV><LABEL for="id_description_line3">Temps Max °C
+<DIV id="id_description_line3">-</DIV><LABEL for="id_description_line2">Rain  mm
+<DIV id="id_description_line4">-</DIV><LABEL for="id_description_line3">Evap  mm
+<DIV id="id_description_line5">-</DIV><LABEL for="id_description_line2">Sun  hours
+<DIV id="id_description_line6">-</DIV><LABEL for="id_description_line3">Max wind gust Dir km/h
+<DIV id="id_description_line7">-</DIV><LABEL for="id_description_line2">Max wind gust Spd 
+<DIV id="id_description_line8">-</DIV><LABEL for="id_description_line3">Max wind gust Time local
+<DIV id="id_description_line9">-</DIV><LABEL for="id_description_line2">9am Temp °C
+<DIV id="id_description_line10">-</DIV><LABEL for="id_description_line3">9am  RH %
+<DIV id="id_description_line11">-</DIV><LABEL for="id_description_line2">9am  Cld 8th
+<DIV id="id_description_line12">-</DIV><LABEL for="id_description_line3">9am  Dir km/h
+<DIV id="id_description_line13">-</DIV><LABEL for="id_description_line2">9am  Spd 
+<DIV id="id_description_line14">-</DIV><LABEL for="id_description_line3">9am  MSLP hPa
+<DIV id="id_description_line15">-</DIV><LABEL for="id_description_line2">9pm Temp °C
+<DIV id="id_description_line16">-</DIV><LABEL for="id_description_line3">9pm  RH %
+<DIV id="id_description_line17">-</DIV><LABEL for="id_description_line2">9pm  Cld 8th
+<DIV id="id_description_line18">-</DIV><LABEL for="id_description_line3">9pm  Dir km/h
+<DIV id="id_description_line19">-</DIV><LABEL for="id_description_line2">9pm  Spd 
+<DIV id="id_description_line20">-</DIV><LABEL for="id_description_line3">9pm  MSLP hPa
+
+
+<DIV id="id_description_line21">-</DIV><BR>
+</DIV></x3d></BODY></HTML>

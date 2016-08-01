@@ -1,0 +1,621 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)file://C:\Users\Username\AppData\Local\Temp\fred1.html -->
+<!DOCTYPE  PUBLIC "" ""><HTML><HEAD><META content="IE=5.0000" 
+http-equiv="X-UA-Compatible">
+              
+<META charset="UTF-8">             
+<META http-equiv="X-UA-Compatible" content="IE=edge">             
+<META name="viewport" content="width=device-width, initial-scale=1">             <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
+    <TITLE>HTML Events on 3D objects</TITLE>     
+<SCRIPT src="http://www.x3dom.org/download/x3dom.js" type="text/javascript"></SCRIPT>
+     <LINK href="HTML%20Events%20on%203D%20objects_files/x3dom.css" rel="stylesheet" 
+type="text/css">          
+<SCRIPT src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></SCRIPT>
+             
+<SCRIPT>
+        //Round a float value to x.xx format
+        function roundWithTwoDecimals(value)
+        {
+            return (Math.round(value * 100)) / 100;
+        }
+    
+        //Handle click on any group member
+        function handleGroupClick(event)
+        {
+            //Mark hitting point
+            $('#marker').attr('translation', event.hitPnt);
+            console.log(event);
+            
+            //Display coordinates of hitting point (rounded)
+            var coordinates = event.hitPnt;
+            $('#coordX').html(roundWithTwoDecimals(coordinates[0]));
+            $('#coordY').html(roundWithTwoDecimals(coordinates[1]));
+            $('#coordZ').html(roundWithTwoDecimals(coordinates[2]));
+               
+                
+
+        }
+        
+        //Handle click on a shape
+        function handleSingleClick(shape)
+        {
+                //Last clicked object descriptors
+                $('#id_description_line1').html($(shape).attr("def"));
+                $('#id_description_line2').html($(shape).attr("def1"));
+                $('#id_description_line3').html($(shape).attr("def2"));
+
+                //Second table (KPIs)
+                $("#id_table2_kpi1").html($(shape).attr("kpi1"));
+                $("#id_table2_kpi2").html($(shape).attr("kpi2"));
+                $("#id_table2_kpi3").html($(shape).attr("kpi3"));
+                $("#id_table2_kpi4").html($(shape).attr("kpi4"));
+        }
+        
+        $(document).ready(function(){
+            //Add a onclick callback to every shape
+            $("shape").each(function() {
+                $(this).attr("onclick", "handleSingleClick(this)");
+            });
+        });
+        </SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10586.494"></HEAD> 
+<BODY>
+<H1>Object picking example</H1>
+<P>Click on any shape to get the id and the coordinates of the hitting point. 
+</P><x3d id="boxes" height="800" width="800px" y="0px" x="0px" showlog="false" 
+showstat="false"><scene><viewpoint orientation="0 0 0 0" 
+position="0 0 20"></viewpoint>         <group 
+onclick="handleGroupClick(event)"><transform id="obj1" translation=" 0.238095238095238, 8.7878787878787903E-2, 0.75" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="981" kpi2="1120" kpi1="12266" 
+def2="BALLS HEAD / BERRYS BAY / BLUES POINT / PLATYPUS / HMAS WATERHEN / LAVENDER BAY / MCMAHONS POINT / WAVERTON" 
+def1="2011        " def="2060"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj1" 
+string="2060" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj2" translation=" 0.65476190476190399, 0.34545454545454601, 0.94999999999999996" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1230" kpi3="1066" kpi2="1190" kpi1="10810" 
+def2="BALLS HEAD / BERRYS BAY / BLUES POINT / PLATYPUS / HMAS WATERHEN / LAVENDER BAY / MCMAHONS POINT / WAVERTON" 
+def1="2006        " def="2060"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj2" 
+string="2060" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj3" translation=" 0.92857142857142805, 0.90000000000000002, 1" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1236" kpi3="1249" kpi2="1236" kpi1="10994" 
+def2="BALLS HEAD / BERRYS BAY / BLUES POINT / PLATYPUS / HMAS WATERHEN / LAVENDER BAY / MCMAHONS POINT / WAVERTON" 
+def1="2001        " def="2060"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj3" 
+string="2060" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj4" translation=" 0.160714285714285, 0, 0.80833333333333401" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1213" kpi3="952" kpi2="1107" kpi1="5683" 
+def2="KIRRIBILLI / MILSONS POINT" def1="2011        " 
+def="2061"><appearance><material diffusecolor="red"></material>        
+</appearance>         <text id="obj4" string="2061" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj5" translation=" 0.52976190476190499, 0.27272727272727298, 0.78333333333333299" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1210" kpi3="1042" kpi2="1169" kpi1="5680" 
+def2="KIRRIBILLI / MILSONS POINT" def1="2006        " 
+def="2061"><appearance><material diffusecolor="blue"></material>        
+</appearance>         <text id="obj5" string="2061" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj6" translation=" 1, 1, 0.94999999999999996" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1230" kpi3="1282" kpi2="1248" kpi1="5319" 
+def2="KIRRIBILLI / MILSONS POINT" def1="2001        " 
+def="2061"><appearance><material diffusecolor="green"></material>        
+</appearance>         <text id="obj6" string="2061" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj7" translation=" 0.25595238095238099, 0.233333333333333, 0.57499999999999996" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1185" kpi3="1029" kpi2="1123" kpi1="6778" 
+def2="CAMMERAY" def1="2011        " def="2062"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj7" 
+string="2062" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj8" translation=" 0.60119047619047605, 0.40909090909090901, 0.75" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1206" kpi3="1087" kpi2="1181" kpi1="5776" 
+def2="CAMMERAY" def1="2006        " def="2062"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj8" 
+string="2062" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj9" translation=" 0.76190476190476197, 0.88181818181818195, 0.63333333333333297" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1192" kpi3="1243" kpi2="1208" kpi1="5483" 
+def2="CAMMERAY" def1="2001        " def="2062"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj9" 
+string="2062" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj10" translation=" 0.44642857142857101, 0.51515151515151503, 0.61666666666666603" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1190" kpi3="1122" kpi2="1155" kpi1="5928" 
+def2="NORTHBRIDGE / SAILORS BAY" def1="2011        " 
+def="2063"><appearance><material diffusecolor="red"></material>        
+</appearance>         <text id="obj10" string="2063" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj11" translation=" 0.75, 0.65757575757575804, 0.66666666666666596" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1196" kpi3="1169" kpi2="1206" kpi1="6034" 
+def2="NORTHBRIDGE / SAILORS BAY" def1="2006        " 
+def="2063"><appearance><material diffusecolor="blue"></material>        
+</appearance>         <text id="obj11" string="2063" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj12" translation=" 0.76785714285714302, 0.86666666666666703, 0.59166666666666701" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1187" kpi3="1238" kpi2="1209" kpi1="5839" 
+def2="NORTHBRIDGE / SAILORS BAY" def1="2001        " 
+def="2063"><appearance><material diffusecolor="green"></material>        
+</appearance>         <text id="obj12" string="2063" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj13" translation=" 8.3333333333333398E-2, 0.13030303030303, 0.39999999999999902" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1164" kpi3="995" kpi2="1094" kpi1="8626" 
+def2="ARTARMON" def1="2011        " def="2064"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj13" 
+string="2064" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj14" translation=" 0.422619047619048, 0.31818181818181801, 0.55833333333333302" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1183" kpi3="1057" kpi2="1151" kpi1="9710" 
+def2="ARTARMON" def1="2006        " def="2064"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj14" 
+string="2064" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj15" translation=" 0.58333333333333304, 0.68484848484848504, 0.63333333333333297" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1192" kpi3="1178" kpi2="1178" kpi1="10039" 
+def2="ARTARMON" def1="2001        " def="2064"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj15" 
+string="2064" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj16" translation=" 0.29166666666666602, 0.20909090909090899, 0.66666666666666596" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1196" kpi3="1021" kpi2="1129" kpi1="27165" 
+def2="CROWS NEST / GORE HILL / GREENWICH / GREENWICH POINT / MATER MISERICORDIAE HOSPITAL / NAREMBURN / ROYAL NORTH SHORE HOSPITAL / ST LEONARDS / WOLLSTONECRAFT" 
+def1="2011        " def="2065"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj16" 
+string="2065" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj17" translation=" 0.61309523809523803, 0.39393939393939398, 0.76666666666666605" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1208" kpi3="1082" kpi2="1183" kpi1="25566" 
+def2="CROWS NEST / GORE HILL / GREENWICH / GREENWICH POINT / MATER MISERICORDIAE HOSPITAL / NAREMBURN / ROYAL NORTH SHORE HOSPITAL / ST LEONARDS / WOLLSTONECRAFT" 
+def1="2006        " def="2065"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj17" 
+string="2065" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj18" translation=" 0.76190476190476197, 0.84242424242424196, 0.74166666666666703" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1205" kpi3="1230" kpi2="1208" kpi1="24534" 
+def2="CROWS NEST / GORE HILL / GREENWICH / GREENWICH POINT / MATER MISERICORDIAE HOSPITAL / NAREMBURN / ROYAL NORTH SHORE HOSPITAL / ST LEONARDS / WOLLSTONECRAFT" 
+def1="2001        " def="2065"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj18" 
+string="2065" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj19" translation=" 0.28571428571428498, 0.36363636363636398, 0.44999999999999901" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1170" kpi3="1072" kpi2="1128" kpi1="27635" 
+def2="BLAXSLANDS CORNER / LANE COVE / LINLEY POINT / LONGUEVILLE / MOWBRAY / NORTH LANE COVE / NORTHWOOD / OSBORNE PARK / RIVERVIEW / TAMBOURINE BAY / WEST LANE COVE" 
+def1="2011        " def="2066"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj19" 
+string="2066" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj20" translation=" 0.53571428571428503, 0.472727272727273, 0.55833333333333302" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1183" kpi3="1108" kpi2="1170" kpi1="26170" 
+def2="BLAXSLANDS CORNER / LANE COVE / LINLEY POINT / LONGUEVILLE / MOWBRAY / NORTH LANE COVE / NORTHWOOD / OSBORNE PARK / RIVERVIEW / TAMBOURINE BAY / WEST LANE COVE" 
+def1="2006        " def="2066"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj20" 
+string="2066" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj21" translation=" 0.67857142857142805, 0.76666666666666705, 0.59999999999999898" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1188" kpi3="1205" kpi2="1194" kpi1="25424" 
+def2="BLAXSLANDS CORNER / LANE COVE / LINLEY POINT / LONGUEVILLE / MOWBRAY / NORTH LANE COVE / NORTHWOOD / OSBORNE PARK / RIVERVIEW / TAMBOURINE BAY / WEST LANE COVE" 
+def1="2001        " def="2066"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj21" 
+string="2066" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj22" translation=" 0, 0.103030303030303, 0.31666666666666499" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1154" kpi3="986" kpi2="1080" kpi1="22633" 
+def2="CHATSWOOD / CHATSWOOD WEST / FULLERS BRIDGE" def1="2011        " def="2067"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj22" 
+string="2067" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj23" translation=" 0.41666666666666602, 0.34242424242424202, 0.391666666666666" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1163" kpi3="1065" kpi2="1150" kpi1="22221" 
+def2="CHATSWOOD / CHATSWOOD WEST / FULLERS BRIDGE" def1="2006        " def="2067"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj23" 
+string="2067" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj24" translation=" 0.44642857142857101, 0.66060606060605997, 0.375" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1161" kpi3="1170" kpi2="1155" kpi1="18211" 
+def2="CHATSWOOD / CHATSWOOD WEST / FULLERS BRIDGE" def1="2001        " def="2067"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj24" 
+string="2067" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj25" translation=" 0.28571428571428498, 0.42424242424242498, 0.375" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1161" kpi3="1092" kpi2="1128" kpi1="15903" 
+def2="CASTLECRAG / EAST WILLOUGHBY / FLAT ROCK / FRENCHS ROAD / MIDDLE COVE / WILLOUGHBY / WILLOUGHBY NORTH" 
+def1="2011        " def="2068"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj25" 
+string="2068" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj26" translation=" 0.52976190476190499, 0.53636363636363604, 0.391666666666666" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1163" kpi3="1129" kpi2="1169" kpi1="14741" 
+def2="CASTLECRAG / EAST WILLOUGHBY / FLAT ROCK / FRENCHS ROAD / MIDDLE COVE / WILLOUGHBY / WILLOUGHBY NORTH" 
+def1="2006        " def="2068"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj26" 
+string="2068" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj27" translation=" 0.499999999999999, 0.71212121212121204, 0.30833333333333302" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1153" kpi3="1187" kpi2="1164" kpi1="14500" 
+def2="CASTLECRAG / EAST WILLOUGHBY / FLAT ROCK / FRENCHS ROAD / MIDDLE COVE / WILLOUGHBY / WILLOUGHBY NORTH" 
+def1="2001        " def="2068"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj27" 
+string="2068" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj28" translation=" 0.42857142857142799, 0.53030303030303005, 0.50833333333333297" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1177" kpi3="1127" kpi2="1152" kpi1="13298" 
+def2="CASTLE COVE / EAST ROSEVILLE / HEADLAND HEIGHTS / ROSEVILLE / ROSEVILLE CHASE" 
+def1="2011        " def="2069"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj28" 
+string="2069" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj29" translation=" 0.75, 0.66969696969697001, 0.69166666666666698" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1199" kpi3="1173" kpi2="1206" kpi1="12197" 
+def2="CASTLE COVE / EAST ROSEVILLE / HEADLAND HEIGHTS / ROSEVILLE / ROSEVILLE CHASE" 
+def1="2006        " def="2069"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj29" 
+string="2069" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj30" translation=" 0.80357142857142905, 0.83636363636363598, 0.71666666666666601" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1202" kpi3="1228" kpi2="1215" kpi1="12042" 
+def2="CASTLE COVE / EAST ROSEVILLE / HEADLAND HEIGHTS / ROSEVILLE / ROSEVILLE CHASE" 
+def1="2001        " def="2069"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj30" 
+string="2069" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj31" translation=" 0.33928571428571402, 0.33939393939394003, 0.64999999999999902" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1194" kpi3="1064" kpi2="1137" kpi1="27462" 
+def2="BALMORAL / BALMORAL BEACH / BALMORAL HEIGHTS / BEAUTY POINT / BRADLEYS HEAD / CHINAMANS BEACH / CHOWDER BAY / CLIFTON GARDENS / GEORGES HEIGHTS / MIDDLE HEAD / MOSMAN / MOSMAN BAY / MOSMAN JUNCTION / MOSMANS BAY / PEARL BAY / SIRIUS COVE / SPIT JUNCTION /" 
+def1="2011        " def="2088"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj31" 
+string="2088" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj32" translation=" 0.69642857142857195, 0.53030303030303005, 0.80000000000000004" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1212" kpi3="1127" kpi2="1197" kpi1="25614" 
+def2="BALMORAL / BALMORAL BEACH / BALMORAL HEIGHTS / BEAUTY POINT / BRADLEYS HEAD / CHINAMANS BEACH / CHOWDER BAY / CLIFTON GARDENS / GEORGES HEIGHTS / MIDDLE HEAD / MOSMAN / MOSMAN BAY / MOSMAN JUNCTION / MOSMANS BAY / PEARL BAY / SIRIUS COVE / SPIT JUNCTION /" 
+def1="2006        " def="2088"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj32" 
+string="2088" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj33" translation=" 0.89880952380952395, 0.93333333333333302, 0.77500000000000002" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1209" kpi3="1260" kpi2="1231" kpi1="25740" 
+def2="BALMORAL / BALMORAL BEACH / BALMORAL HEIGHTS / BEAUTY POINT / BRADLEYS HEAD / CHINAMANS BEACH / CHOWDER BAY / CLIFTON GARDENS / GEORGES HEIGHTS / MIDDLE HEAD / MOSMAN / MOSMAN BAY / MOSMAN JUNCTION / MOSMANS BAY / PEARL BAY / SIRIUS COVE / SPIT JUNCTION /" 
+def1="2001        " def="2088"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj33" 
+string="2088" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj34" translation=" 0.273809523809523, 0.15151515151515199, 0.67500000000000004" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1197" kpi3="1002" kpi2="1126" kpi1="11090" 
+def2="KURRABA POINT / NEUTRAL BAY / NEUTRAL BAY JUNCTION" def1="2011        " 
+def="2089"><appearance><material diffusecolor="red"></material>        
+</appearance>         <text id="obj34" string="2089" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj35" translation=" 0.625, 0.35757575757575799, 0.84166666666666701" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1217" kpi3="1070" kpi2="1185" kpi1="10008" 
+def2="KURRABA POINT / NEUTRAL BAY / NEUTRAL BAY JUNCTION" def1="2006        " 
+def="2089"><appearance><material diffusecolor="blue"></material>        
+</appearance>         <text id="obj35" string="2089" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj36" translation=" 0.89880952380952395, 0.912121212121212, 0.90833333333333399" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1225" kpi3="1253" kpi2="1231" kpi1="9502" 
+def2="KURRABA POINT / NEUTRAL BAY / NEUTRAL BAY JUNCTION" def1="2001        " 
+def="2089"><appearance><material diffusecolor="green"></material>        
+</appearance>         <text id="obj36" string="2089" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj37" translation=" 0.32142857142857101, 0.23030303030303001, 0.69999999999999896" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1200" kpi3="1028" kpi2="1134" kpi1="13040" 
+def2="CREMORNE / CREMORNE JUNCTION / CREMORNE NORTH / CREMORNE POINT" def1="2011        " 
+def="2090"><appearance><material diffusecolor="red"></material>        
+</appearance>         <text id="obj37" string="2090" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj38" translation=" 0.65476190476190399, 0.43636363636363701, 0.83333333333333304" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1216" kpi3="1096" kpi2="1190" kpi1="13147" 
+def2="CREMORNE / CREMORNE JUNCTION / CREMORNE NORTH / CREMORNE POINT" def1="2006        " 
+def="2090"><appearance><material diffusecolor="blue"></material>        
+</appearance>         <text id="obj38" string="2090" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj39" translation=" 0.84523809523809501, 0.88181818181818195, 0.84166666666666701" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1217" kpi3="1243" kpi2="1222" kpi1="12577" 
+def2="CREMORNE / CREMORNE JUNCTION / CREMORNE NORTH / CREMORNE POINT" def1="2001        " 
+def="2090"><appearance><material diffusecolor="green"></material>        
+</appearance>         <text id="obj39" string="2090" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj40" translation=" 0.29761904761904701, 0.41818181818181799, 0.46666666666666601" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1172" kpi3="1090" kpi2="1130" kpi1="9806" 
+def2="FIGTREE / HUNTERS HILL / HUNTERS HILL WEST / PULPIT POINT / TARBAN POINT / WOOLWICH" 
+def1="2011        " def="2110"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj40" 
+string="2110" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj41" translation=" 0.48214285714285698, 0.5, 0.391666666666666" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1163" kpi3="1117" kpi2="1161" kpi1="9834" 
+def2="FIGTREE / HUNTERS HILL / HUNTERS HILL WEST / PULPIT POINT / TARBAN POINT / WOOLWICH" 
+def1="2006        " def="2110"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj41" 
+string="2110" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj42" translation=" 0.61904761904761896, 0.75757575757575701, 0.42499999999999999" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1167" kpi3="1202" kpi2="1184" kpi1="9706" 
+def2="FIGTREE / HUNTERS HILL / HUNTERS HILL WEST / PULPIT POINT / TARBAN POINT / WOOLWICH" 
+def1="2001        " def="2110"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj42" 
+string="2110" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj43" translation=" 4.1666666666666102E-2, 0.26969696969696999, 6.6666666666666805E-2" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1124" kpi3="1041" kpi2="1087" kpi1="13430" 
+def2="BORONIA PARK / GLADES BAY / GLADESVILLE / HENLEY / HUNTLEYS COVE / HUNTLEYS POINT / MONASH PARK / TARBAN / TENNYSON / TENNYSON POINT" 
+def1="2011        " def="2111"><appearance><material 
+diffusecolor="red"></material>        </appearance>         <text id="obj43" 
+string="2111" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj44" translation=" 0.23214285714285701, 0.36666666666666697, 1.6666666666666701E-2" 
+rotation="0,0,0,0" scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" 
+center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" 
+bboxcenter="0,0,0" bboxsize="-1,-1,-1" kpi4="1118" kpi3="1073" kpi2="1119" kpi1="13354" 
+def2="BORONIA PARK / GLADES BAY / GLADESVILLE / HENLEY / HUNTLEYS COVE / HUNTLEYS POINT / MONASH PARK / TARBAN / TENNYSON / TENNYSON POINT" 
+def1="2006        " def="2111"><appearance><material 
+diffusecolor="blue"></material>        </appearance>         <text id="obj44" 
+string="2111" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform> 
+<transform id="obj45" translation=" 0.25, 0.55454545454545501, 0" rotation="0,0,0,0" 
+scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" 
+scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1" kpi4="1116" kpi3="1135" kpi2="1122" kpi1="12869" def2="BORONIA PARK / GLADES BAY / GLADESVILLE / HENLEY / HUNTLEYS COVE / HUNTLEYS POINT / MONASH PARK / TARBAN / TENNYSON / TENNYSON POINT" 
+def1="2001        " def="2111"><appearance><material 
+diffusecolor="green"></material>        </appearance>         <text id="obj45" 
+string="2111" solid="false" ccw="true" lit="true"><fontstyle id="obj_1_fs" 
+family="'Times New Roman' 'Times' 'serif'" justify="'MIDDLE' 'MIDDLE'" 
+horizontal="true" lefttoright="true" toptobottom="true" size="1" 
+spacing="1"></fontstyle>         </text>       </shape>     </transform>  
+<transform id="obj_12" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" 
+render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" 
+scaleorientation="0,0,0,0"><shape id="obj_12_shp" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1"><indexedlineset id="obj_12_line" solid="true" ccw="true" 
+lit="true" coordindex="0 1" colorpervertex="true"><coordinate id="obj_12_coor" 
+point="-10 0 0,+10 0 0"></coordinate>           <color id="obj_12_color" color="0 0 0,0 0 0"></color> 
+        </indexedlineset>       </shape>     </transform>  <transform id="obj_12" 
+translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1" center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_12_shp" 
+render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1"><indexedlineset id="obj_12_line" 
+solid="true" ccw="true" lit="true" coordindex="0 1" 
+colorpervertex="true"><coordinate id="obj_12_coor" 
+point="0 -10 0, 0 +10 0"></coordinate>           <color id="obj_12_color" color="0 0 0,0 0 0"></color> 
+        </indexedlineset>       </shape>     </transform>  <transform id="obj_12" 
+translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1" center="0,0,0" scaleorientation="0,0,0,0"><shape id="obj_12_shp" 
+render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1"><indexedlineset id="obj_12_line" 
+solid="true" ccw="true" lit="true" coordindex="0 1" 
+colorpervertex="true"><coordinate id="obj_12_coor" 
+point=" 0 0 -10, 0 0 +10"></coordinate>           <color id="obj_12_color" 
+color="0 0 0,0 0 0"></color>         </indexedlineset>       </shape>     
+</transform> <transform id="obj45" translation=" 0, 0, 2" rotation="0,0,0,0" 
+scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" 
+scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1"><appearance><material diffusecolor="black"></material>       
+ </appearance>         <text id="obj45" string="z plus" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj45" translation=" 0, 0, -2" rotation="0,0,0,0" 
+scale=".1 .1 .1" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" 
+scaleorientation="0,0,0,0"><shape id="obj_2_shp" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1"><appearance><material diffusecolor="black"></material>       
+ </appearance>         <text id="obj45" string="z minus" solid="false" ccw="true" 
+lit="true"><fontstyle id="obj_1_fs" family="'Times New Roman' 'Times' 'serif'" 
+justify="'MIDDLE' 'MIDDLE'" horizontal="true" lefttoright="true" toptobottom="true" 
+size="1" spacing="1"></fontstyle>         </text>       </shape>     
+</transform> <transform id="obj_0" translation="0 0 0" rotation="0 0 1 0" scale="10 10 1" 
+render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" 
+scaleorientation="0,0,0,0"><shape id="obj_0_shp" render="true" bboxcenter="0,0,0" 
+bboxsize="-1,-1,-1"><appearance id="obj_0_app"><material id="obj_0_mat" 
+diffusecolor=".5 0 5" emissivecolor="0 0 0" specularcolor="0 0 0" 
+ambientintensity=".2" shininess=".2" transparency="0"></material>         
+</appearance>         <torus id="obj_0_torus" solid="true" ccw="true" lit="true" 
+innerradius="0.01" outerradius="1" angle="6.283185307179586" caps="true" 
+subdivision="36,36"></torus>       </shape>     </transform>                     
+        </group> </scene> 
+<DIV style="left: 820px; top: 70px; width: 200px; position: absolute;">
+<H3>Last clicked object:</H3><LABEL for="id_description_line1">Postcode</LABEL>
+<DIV id="id_description_line1">-</DIV><LABEL for="id_description_line2">Year
+<DIV id="id_description_line2">-</DIV><LABEL for="id_description_line3">Suburb
+<DIV id="id_description_line3">-</DIV><BR>
+<H3>Click coordinates:</H3>
+<TABLE style="font-size: 1em;">
+  <TBODY>
+  <TR>
+    <TD>x: </TD>
+    <TD id="coordX">-</TD></TR>
+  <TR>
+    <TD>y: </TD>
+    <TD id="coordY">-</TD></TR>
+  <TR>
+    <TD>z: </TD>
+    <TD id="coordZ">-</TD></TR></TBODY></TABLE><BR>
+<H3>KPIs</H3>
+<TABLE style="font-size: 1em;">
+  <TBODY>
+  <TR>
+    <TD>Population: </TD>
+    <TD id="id_table2_kpi1">-</TD></TR>
+  <TR>
+    <TD>Advantage &amp; Disadvantage: </TD>
+    <TD id="id_table2_kpi2">-</TD></TR>
+  <TR>
+    <TD>Economic: </TD>
+    <TD id="id_table2_kpi3">-</TD></TR>
+  <TR>
+    <TD>Educ &amp; Occ: </TD>
+    <TD 
+id="id_table2_kpi4">-</TD></TR></TBODY></TABLE></LABEL></LABEL></DIV></x3d></BODY></HTML>
